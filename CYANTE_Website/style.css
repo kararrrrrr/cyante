@@ -438,3 +438,47 @@ footer {
   position: relative;
   z-index: 3;
 }
+/* =============================================== */
+/* ===== ÜRÜN SAYFASI VİDEO ARKA PLAN STİLLERİ ===== */
+/* =============================================== */
+
+#product-hero {
+    position: relative; /* İçerik konumlandırması için temel alınacak nokta */
+    overflow: hidden;   /* Section dışına taşan videoları gizler */
+}
+
+#product-hero .container {
+    position: relative; /* İçeriğin overlay ve videonun üzerinde kalması için */
+    z-index: 2;         /* Katman sırası: İçerik en üstte (2) */
+}
+
+.video-background-container {
+    position: absolute; /* Section'a göre konumlanır */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;         /* Katman sırası: Video en altta (0) */
+}
+
+.video-background-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Videonun en-boy oranını koruyarak alanı kaplamasını sağlar */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Üstten daha şeffaf, alta doğru opaklaşan bir siyah gradyan */
+    background: linear-gradient(
+        to bottom, 
+        rgba(18, 18, 18, 0.3) 0%, 
+        rgba(18, 18, 18, 0.7) 50%, 
+        #121212 95%
+    );
+    z-index: 1;         /* Katman sırası: Overlay ortada (1) */
+}
