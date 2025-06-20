@@ -2,6 +2,14 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self'; 
+        script-src 'self' https://cdn.jsdelivr.net; 
+        style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com; 
+        font-src https://cdnjs.cloudflare.com https://fonts.gstatic.com; 
+        img-src 'self' data:; 
+        frame-src https://www.google.com; 
+        connect-src https://formspree.io;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CYANTE - Akıllı Yazılım Çözümleri</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -18,13 +26,13 @@
                 <svg width="150" height="40" xmlns="http://www.w3.org/2000/svg"><style>.cyante-text { font-family: 'Poppins', sans-serif; font-size: 30px; font-weight: 300; fill: #E0E0E0; letter-spacing: 2px; } .cyante-dot { fill: #00FFFF; }</style><text x="0" y="30" class="cyante-text">CYANTE</text><circle cx="140" cy="30" r="4" class="cyante-dot"/></svg>
             </a>
             <nav>
-    <ul>
-        <li><a href="index.html#urunler">Ürünler</a></li>
-        <li><a href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
-        <li><a href="hakkimizda.html">Hakkımızda</a></li>
-        <li><a href="iletisim.html">İletişim</a></li>
-    </ul>
-</nav>
+                <ul>
+                    <li><a href="index.html#urunler">Ürünler</a></li>
+                    <li><a href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
     
@@ -73,7 +81,9 @@
         </div>
     </footer>
     
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js" 
+            integrity="sha256-e/3Wfg2I/2fODs5J+t34J3QTNNDbTRO1zLgVHGpQj2s=" 
+            crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>
