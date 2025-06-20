@@ -235,31 +235,31 @@ footer {
     padding-bottom: 80px;
     position: relative;
     overflow: hidden;
-    text-align: center; /* YAZI ORTALANDI */
+    text-align: center; /* DÜZENLEME */
 }
 #product-hero .container { 
     display: flex; 
-    justify-content: center; /* YAZI ORTALANDI */
     align-items: center; 
+    justify-content: center; /* DÜZENLEME */
     gap: 50px;
     position: relative;
     z-index: 2;
 }
 #product-hero .product-intro { flex: 1; }
 #product-hero h1 { 
-    font-size: 3.5rem; /* Boyut biraz büyüdü */
+    font-size: 3.5rem; /* DÜZENLEME */
     color: var(--heading-color); 
     font-weight: 700; 
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* GÖLGE EKLENDİ */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* YENİ */
 }
 #product-hero .subtitle { 
     font-size: 1.25rem; 
     margin-top: 20px; 
     font-weight: 300; 
-    max-width: 600px; /* Genişlik sabitlendi */
+    max-width: 600px; /* DÜZENLEME */
     margin-left:auto; 
     margin-right:auto; 
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7); /* GÖLGE EKLENDİ */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7); /* YENİ */
 }
 
 .video-background-container {
@@ -281,7 +281,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    /* GÜNCELLENMİŞ GRADIENT: Daha belirgin bir katman */
+    /* GÜNCELLENMİŞ GRADIENT */
     background: linear-gradient(
         to bottom, 
         rgba(18, 18, 18, 0.8) 0%, 
@@ -299,6 +299,180 @@ footer {
 #product-cta h2 { font-size: 2.2rem; color: var(--heading-color); }
 #product-cta p { font-size: 1.1rem; max-width: 500px; margin: 15px auto 30px auto; }
 
+/* ================================== */
+/* ===== HAKKIMIZDA SAYFASI STİLLERİ ===== */
+/* ================================== */
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+.value-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+.value-item h3 {
+    color: var(--heading-color);
+    margin-bottom: 10px;
+}
+
+.founder-section {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 20px;
+}
+.team-member h3 {
+    color: var(--heading-color);
+}
+.team-member .role {
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+/* ================================== */
+/* ===== İLETİŞİM SAYFASI STİLLERİ ===== */
+/* ================================== */
+
+#contact-section {
+    padding: 100px 0;
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    background-color: var(--card-color);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #2a2a2a;
+}
+.contact-details h3, .contact-form h3 {
+    font-size: 1.8rem;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.contact-item i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+.contact-item a, .contact-item span {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+}
+.contact-item a:hover {
+    color: var(--primary-color);
+}
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: #2C2C2C;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: var(--font-family);
+}
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+#map-section {
+    padding-bottom: 100px;
+}
+.map-container {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+}
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    display: block;
+}
+
+/* ===== ANİMASYON İÇİN ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================================== */
+/* ===== KARAR DETAY SAYFASI ===== */
+/* ================================== */
+.karar-ui-showcase {
+    flex: 1; background-color: #1A1A1A; border-radius: 20px;
+    padding: 40px 30px; display: flex; flex-direction: column;
+    align-items: center; gap: 20px; border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.karar-logo-placeholder {
+    width: 50px; height: 50px; background-color: #fff; border-radius: 50%;
+    mask: url('https://www.svgrepo.com/show/494931/brain-circuit.svg') no-repeat center / contain;
+    -webkit-mask: url('https://www.svgrepo.com/show/494931/brain-circuit.svg') no-repeat center / contain;
+}
+.karar-ui-showcase h2 { font-size: 2.5rem; color: var(--heading-color); font-weight: 700; }
+.karar-ui-showcase input {
+    width: 100%; padding: 15px; background-color: #2C2C2C;
+    border: 1px solid #444; border-radius: 8px; color: var(--text-color);
+    font-size: 1rem; text-align: center;
+}
+.karar-button {
+    width: 100%; padding: 15px; border-radius: 8px; font-size: 1rem;
+    font-weight: 600; border: none; cursor: pointer; transition: all 0.3s ease;
+}
+.karar-button.primary { background-color: #333; color: var(--text-color); border: 1px solid #555; }
+.karar-button.primary:hover { background-color: #444; border-color: #777; }
+.karar-button.social-gradient { background: linear-gradient(90deg, #F87516 0%, #5E11FF 100%); color: white; }
+.karar-button.social-gradient:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(248, 117, 22, 0.4); }
+.mode-tags { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; padding-top: 10px; border-top: 1px solid #333; width: 100%; }
+.mode-tags span { color: white; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; }
+.tag-gradient-1 { background: linear-gradient(90deg, #d34a9b, #e83b5d); }
+.tag-gradient-2 { background: linear-gradient(90deg, #4a77d3, #3be8a8); }
+.tag-gradient-3 { background: linear-gradient(90deg, #a44ad3, #e83b8e); }
+#how-it-works { background-color: var(--card-color); padding: 80px 0; }
+.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.step { text-align: center; }
+.step-number {
+    width: 60px; height: 60px; margin: 0 auto 20px auto; border: 2px solid var(--primary-color);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; font-weight: 600; color: var(--primary-color);
+}
+.step h3 { color: var(--heading-color); margin-bottom: 10px; }
+#gallery { padding: 80px 0; }
+.gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.gallery-item {
+    height: 300px; background-color: var(--card-color); border-radius: 12px;
+    display: flex; justify-content: center; align-items: center; color: #666;
+    font-size: 1.2rem; border: 1px solid #333;
+}
 /* ====================================================== */
 /* ===== SERVİS TAKİP DETAY V2 - GÜNCEL İÇERİK STİLLERİ ===== */
 /* ====================================================== */
@@ -341,15 +515,15 @@ footer {
 }
 
 .tab-content {
-    display: none; /* Başlangıçta tüm içerikler gizli */
+    display: none;
     background-color: var(--card-color);
-    padding: 40px; /* İç boşluk arttırıldı */
+    padding: 40px; /* DÜZENLEME */
     border-radius: 12px;
     border: 1px solid #2a2a2a;
 }
 
 .tab-content.active {
-    display: block; /* Sadece aktif olan görünür */
+    display: block;
 }
 
 .tab-content h3 {
@@ -360,30 +534,31 @@ footer {
 .tab-content p {
     font-size: 1.1rem;
     margin-bottom: 30px;
-    max-width: 90%; /* Genişlik ayarlandı */
+    max-width: 90%; /* DÜZENLEME */
 }
 
 .feature-list {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Aradaki boşluk arttırıldı */
+    gap: 20px; /* DÜZENLEME */
 }
 
-/* YENİ SVG'Lİ ÖZELLİK STİLİ */
+/* ESKİ STİL SİLİNDİ, YENİSİ EKLENDİ */
 .feature-item-v2 {
     display: flex;
-    align-items: flex-start; /* İkonu metnin üstüne hizalar */
-    gap: 15px; /* İkon ve metin arası boşluk */
+    align-items: flex-start;
+    gap: 15px;
     font-size: 1rem;
     line-height: 1.5;
+    /* Eski ::before ve padding-left kaldırıldı */
 }
 
 .feature-item-v2 svg {
     width: 22px;
     height: 22px;
     color: var(--primary-color);
-    flex-shrink: 0; /* İkonun küçülmesini engeller */
-    margin-top: 2px; /* Dikey hizalama için ince ayar */
+    flex-shrink: 0;
+    margin-top: 2px;
 }
 
 
@@ -402,7 +577,13 @@ footer {
 }
 
 .premium-icon { flex-shrink: 0; }
-.premium-icon svg { /* YENİ SVG İÇİN STİL */
+.premium-icon img { /* Eski resim için stil korunuyor */
+    width: 100px;
+    height: 100px;
+    filter: invert(70%) sepia(100%) saturate(1000%) hue-rotate(130deg);
+}
+
+.premium-icon svg { /* Yeni SVG için stil eklendi */
     color: var(--primary-color);
     opacity: 0.8;
 }
@@ -436,21 +617,21 @@ footer {
     background-color: var(--card-color);
     padding: 30px;
     border-radius: 12px;
-    text-align: center; /* İÇERİĞİ ORTALA */
+    text-align: center; /* DÜZENLEME */
 }
-.feature-item .feature-icon { /* YENİ SVG İKON ALANI */
+.feature-item .feature-icon { /* YENİ */
     color: var(--primary-color);
     margin-bottom: 20px;
 }
-.feature-item h3 {
-    color: var(--heading-color);
-    margin-bottom: 10px;
-}
+/* feature-item h3 stili zaten genel olarak tanımlı, eklemeye gerek yok */
 
 
 /* ===== MOBİL UYUMLULUK ===== */
 @media (max-width: 992px) {
     #product-hero .container { flex-direction: column; text-align: center; }
+    .values-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .steps-grid, .gallery-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -461,10 +642,13 @@ footer {
     header nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px 25px; /* Dikey ve Yatay boşlukları ayarlar */
+        gap: 15px 25px;
     }
+    .urun-grid { grid-template-columns: 1fr; }
+    .urun-karti.featured { grid-row: auto; }
     #hero h1, #product-hero h1 { font-size: 2.8rem; }
     .premium-content { flex-direction: column; text-align: center; }
     .tab-content p { max-width: 100%; }
+    .steps-grid { grid-template-columns: 1fr; }
     .feature-grid { grid-template-columns: 1fr; }
 }
