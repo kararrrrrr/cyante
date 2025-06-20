@@ -420,14 +420,13 @@ footer {
         flex-direction: column; 
         gap: 15px; 
     }
-    /* YENİ EKLENEN KOD BAŞLANGICI */
+    /* GÜNCELLENMİŞ KOD BAŞLANGICI */
     header nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px; /* Dikeyde boşluk ayarı */
-        padding-top: 10px; /* Üstten biraz boşluk */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px 25px; /* Dikey ve Yatay boşlukları ayarlar */
     }
-    /* YENİ EKLENEN KOD BİTİŞİ */
+    /* GÜNCELLENMİŞ KOD BİTİŞİ */
     .urun-grid { grid-template-columns: 1fr; }
     .urun-karti.featured { grid-row: auto; }
     #hero h1 { font-size: 2.8rem; }
@@ -633,14 +632,13 @@ footer {
         flex-direction: column; 
         gap: 15px; 
     }
-    /* YENİ EKLENEN KOD BAŞLANGICI */
+    /* GÜNCELLENMİŞ KOD BAŞLANGICI */
     header nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px; /* Dikeyde boşluk ayarı */
-        padding-top: 10px; /* Üstten biraz boşluk */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px 25px; /* Dikey ve Yatay boşlukları ayarlar */
     }
-    /* YENİ EKLENEN KOD BİTİŞİ */
+    /* GÜNCELLENMİŞ KOD BİTİŞİ */
     .urun-grid { grid-template-columns: 1fr; }
     .urun-karti.featured { grid-row: auto; }
     #hero h1 { font-size: 2.8rem; }
