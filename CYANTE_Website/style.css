@@ -131,8 +131,8 @@ header nav a:hover {
     z-index: 0;
 }
 
-/* ===== ANA SAYFA ÜRÜNLER BÖLÜMÜ ===== */
-#urunler {
+/* ===== ANA SAYFA ÜRÜNLER / HİZMETLER BÖLÜMÜ ===== */
+#urunler, #hizmetler-grid {
     padding: 100px 0;
 }
 
@@ -150,6 +150,9 @@ header nav a:hover {
     border: 1px solid #2a2a2a;
     transition: all 0.3s ease;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .urun-karti:hover {
@@ -176,12 +179,14 @@ header nav a:hover {
 .urun-karti p {
     font-size: 1rem;
     margin-bottom: 25px;
+    flex-grow: 1; /* Paragrafın esneyerek kartları aynı hizada tutmasını sağlar */
 }
 
 .urun-button {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
+    margin-top: auto; /* Butonun kartın en altına yaslanmasını sağlar */
 }
 
 .urun-karti.featured {
@@ -213,31 +218,61 @@ footer {
     margin-top: 50px;
 }
 
-/* ===== ANİMASYON İÇİN ===== */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /* ======================================== */
 /* ===== ÜRÜN DETAY SAYFALARI (GENEL) ===== */
 /* ======================================== */
+
+/* --- Ürün/Hizmet Sayfası Hero Alanı --- */
 #product-hero {
     padding-top: 150px;
     padding-bottom: 80px;
+    position: relative;
+    overflow: hidden;
 }
-#product-hero .container { display: flex; align-items: center; gap: 50px; }
+#product-hero .container { 
+    display: flex; 
+    align-items: center; 
+    gap: 50px;
+    position: relative;
+    z-index: 2;
+}
 #product-hero .product-intro { flex: 1; }
 #product-hero h1 { font-size: 3rem; color: var(--heading-color); font-weight: 700; }
 #product-hero .subtitle { font-size: 1.25rem; margin-top: 20px; font-weight: 300; }
+
+/* --- Video Arka Plan Stilleri (product-hero için) --- */
+.video-background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.video-background-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom, 
+        rgba(18, 18, 18, 0.3) 0%, 
+        rgba(18, 18, 18, 0.7) 50%, 
+        #121212 95%
+    );
+    z-index: 1;
+}
+
+/* --- Sayfa Sonu CTA Alanı --- */
 #product-cta {
-    padding: 100px 0; text-align: center;
+    padding: 100px 0; 
+    text-align: center;
     background: linear-gradient(rgba(0, 255, 255, 0.05), rgba(18, 18, 18, 1));
 }
 #product-cta h2 { font-size: 2.2rem; color: var(--heading-color); }
@@ -342,44 +377,18 @@ footer {
 }
 
 
-/* ================================================================ */
-/* ===== ÜRÜN SAYFASI VİDEO ARKA PLAN STİLLERİ (DÜZELTİLMİŞ) ===== */
-/* ================================================================ */
-#product-hero {
-    position: relative;
-    overflow: hidden;
+/* ===== ANİMASYON İÇİN ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-#product-hero .container {
-    position: relative;
-    z-index: 2;
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
-.video-background-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
-.video-background-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        to bottom, 
-        rgba(18, 18, 18, 0.3) 0%, 
-        rgba(18, 18, 18, 0.7) 50%, 
-        #121212 95%
-    );
-    z-index: 1;
-}
+
 
 /* ===== MOBİL UYUMLULUK ===== */
 @media (max-width: 992px) {
@@ -392,93 +401,8 @@ footer {
     .urun-grid { grid-template-columns: 1fr; }
     .urun-karti.featured { grid-row: auto; }
     #hero h1 { font-size: 2.8rem; }
+    #product-hero h1 { font-size: 2.5rem; }
     .premium-content { flex-direction: column; text-align: center; }
     .tab-content p { max-width: 100%; }
-}
-/* =============================================
-   Servis Takip Video Banner Stilleri
-   ============================================= */
-
-#servis-takip-banner {
-  position: relative; /* İçerideki elemanları konumlandırmak için gereklidir. */
-  height: 60vh; /* Banner yüksekliği (ekran yüksekliğinin %60'ı kadar). Değeri artırıp azaltabilirsiniz. */
-  min-height: 400px; /* Minimum yükseklik, küçük ekranlarda çok küçülmesini engeller. */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden; /* Taşmaları gizler. */
-  color: #ffffff; /* Başlık rengini beyaz yapar. */
-}
-
-#background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Videonun en-boy oranını koruyarak alanı kaplamasını sağlar. */
-  z-index: 1; /* Videoyu en arkaya gönderir. */
-}
-
-/* Videonun üzerine soft bir katman ekleyerek yazının okunurluğunu artırır */
-#servis-takip-banner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Siyah ve %40 saydamlık. Değeri 0.1 ile 0.9 arasında değiştirerek koyuluğu ayarlayabilirsiniz. */
-  z-index: 2; /* Katmanı videonun üzerine, yazının altına yerleştirir. */
-}
-
-/* Başlık ve diğer içeriklerin video ve katmanın üzerinde kalmasını sağlar */
-#servis-takip-banner .banner-content {
-  position: relative;
-  z-index: 3;
-}
-/* =============================================== */
-/* ===== ÜRÜN SAYFASI VİDEO ARKA PLAN STİLLERİ ===== */
-/* =============================================== */
-
-#product-hero {
-    position: relative; /* İçerik konumlandırması için temel alınacak nokta */
-    overflow: hidden;   /* Section dışına taşan videoları gizler */
-}
-
-#product-hero .container {
-    position: relative; /* İçeriğin overlay ve videonun üzerinde kalması için */
-    z-index: 2;         /* Katman sırası: İçerik en üstte (2) */
-}
-
-.video-background-container {
-    position: absolute; /* Section'a göre konumlanır */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;         /* Katman sırası: Video en altta (0) */
-}
-
-.video-background-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* Videonun en-boy oranını koruyarak alanı kaplamasını sağlar */
-}
-
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Üstten daha şeffaf, alta doğru opaklaşan bir siyah gradyan */
-    background: linear-gradient(
-        to bottom, 
-        rgba(18, 18, 18, 0.3) 0%, 
-        rgba(18, 18, 18, 0.7) 50%, 
-        #121212 95%
-    );
-    z-index: 1;         /* Katman sırası: Overlay ortada (1) */
+    .steps-grid { gap: 50px; }
 }
