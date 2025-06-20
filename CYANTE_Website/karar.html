@@ -2,6 +2,14 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self'; 
+        script-src 'self' https://cdn.jsdelivr.net; 
+        style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com; 
+        font-src https://cdnjs.cloudflare.com https://fonts.gstatic.com; 
+        img-src 'self' data:; 
+        frame-src https://www.google.com; 
+        connect-src https://formspree.io;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KARAR - Yapay Zeka Destekli Karar Rehberiniz - CYANTE</title>
     <link rel="stylesheet" href="style.css">
@@ -76,7 +84,7 @@
             <div class="container">
                 <h2>Kararsızlığa Son Verin.</h2>
                 <p>Hemen indirin ve hayatınızdaki önemli kararları verirken yapay zekanın gücünden faydalanın.</p>
-                <a href="https://karar.cloud" class="cta-button" target="_blank">Uygulamayı Keşfet</a>
+                <a href="https://karar.cloud" class="cta-button" target="_blank" rel="noopener noreferrer">Uygulamayı Keşfet</a>
             </div>
         </section>
     </main>
