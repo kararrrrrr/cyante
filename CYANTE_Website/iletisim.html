@@ -2,11 +2,21 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self'; 
+        script-src 'self' https://cdn.jsdelivr.net; 
+        style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com; 
+        font-src https://cdnjs.cloudflare.com https://fonts.gstatic.com; 
+        img-src 'self' data:; 
+        frame-src https://www.google.com; 
+        connect-src https://formspree.io;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İletişim - CYANTE</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -59,12 +69,12 @@
                         </div>
                         <div class="contact-item">
                             <i class="fab fa-instagram"></i>
-                            <a href="https://www.instagram.com/gookallp" target="_blank">@gookallp</a>
+                            <a href="https://www.instagram.com/gookallp" target="_blank" rel="noopener noreferrer">@gookallp</a>
                         </div>
                     </div>
                     <div class="contact-form reveal">
                         <h3>Mesaj Gönderin</h3>
-                        <form action="https://formspree.io/f/SİZİN_FORM_IDNİZ" method="POST">
+                        <form action="https://formspree.io/f/xovwneky" method="POST">
                             <input type="text" name="name" placeholder="Adınız Soyadınız" required>
                             <input type="email" name="email" placeholder="E-posta Adresiniz" required>
                             <input type="text" name="subject" placeholder="Konu" required>
@@ -78,7 +88,7 @@
 
         <section id="map-section">
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102130.6974918579!2d27.32757501375995!3d37.03437295796989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14be6c54a93c7a9f%3A0x910ff73a9856a939!2sBodrum%2C%20Muğla!5e0!3m2!1str!2str!4v1718873998845!5m2!1str!2str" 
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102048.2678641977!2d27.3524985513672!3d37.034341900000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14be6c5c83017777%3A0x86868a267cb1639!2sBodrum%2C%20Muğla!5e0!3m2!1str!2str!4v1687524834271!5m2!1str!2str" 
                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
