@@ -1,0 +1,397 @@
+/* ===== GENEL VE DEĞİŞKENLER ===== */
+:root {
+    --primary-color: #00FFFF; /* Canlı Cyan */
+    --background-color: #121212; /* Koyu Arka Plan */
+    --card-color: #1E1E1E; /* Kart Rengi */
+    --text-color: #E0E0E0; /* Ana Metin Rengi */
+    --heading-color: #FFFFFF; /* Başlık Rengi */
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 50px;
+}
+
+/* ===== HEADER (ÜST BÖLÜM) ===== */
+header {
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    border-bottom: 1px solid #2a2a2a;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    text-decoration: none;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+header nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--primary-color);
+}
+
+/* ===== HERO (ANA KARŞILAMA) BÖLÜMÜ ===== */
+#hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 180px;
+    padding-bottom: 120px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--background-color) 80%, rgba(0, 255, 255, 0.05));
+}
+
+#hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    font-weight: 300;
+}
+
+.cta-button {
+    background: var(--primary-color);
+    color: #000;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+}
+
+/* ===== HAREKETLİ ARKA PLAN ANİMASYONU ===== */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* ===== ANA SAYFA ÜRÜNLER BÖLÜMÜ ===== */
+#urunler {
+    padding: 100px 0;
+}
+
+.urun-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.urun-karti {
+    background-color: var(--card-color);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #2a2a2a;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.urun-karti:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.urun-karti .ikon {
+    margin-bottom: 20px;
+    height: 50px;
+}
+
+.urun-karti .ikon img {
+    height: 100%;
+    filter: invert(1) opacity(0.8);
+}
+
+.urun-karti h3 {
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    margin-bottom: 15px;
+}
+
+.urun-karti p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.urun-button {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.urun-karti.featured {
+    grid-row: span 2;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+    position: relative;
+    padding-top: 50px;
+}
+
+.featured-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #2a2a2a;
+    margin-top: 50px;
+}
+
+/* ===== ANİMASYON İÇİN ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ======================================== */
+/* ===== ÜRÜN DETAY SAYFALARI (GENEL) ===== */
+/* ======================================== */
+#product-hero {
+    padding-top: 150px;
+    padding-bottom: 80px;
+}
+#product-hero .container { display: flex; align-items: center; gap: 50px; }
+#product-hero .product-intro { flex: 1; }
+#product-hero h1 { font-size: 3rem; color: var(--heading-color); font-weight: 700; }
+#product-hero .subtitle { font-size: 1.25rem; margin-top: 20px; font-weight: 300; }
+#product-cta {
+    padding: 100px 0; text-align: center;
+    background: linear-gradient(rgba(0, 255, 255, 0.05), rgba(18, 18, 18, 1));
+}
+#product-cta h2 { font-size: 2.2rem; color: var(--heading-color); }
+#product-cta p { font-size: 1.1rem; max-width: 500px; margin: 15px auto 30px auto; }
+
+
+/* ============================================ */
+/* ===== SERVİS TAKİP DETAY SAYFASI STİLLERİ ===== */
+/* ============================================ */
+#detailed-features { padding: 80px 0; }
+.tab-buttons { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
+.tab-button {
+    padding: 12px 25px; background-color: var(--card-color);
+    border: 1px solid #333; color: var(--text-color); border-radius: 30px;
+    cursor: pointer; font-size: 1rem; font-weight: 500; transition: all 0.3s ease;
+}
+.tab-button:hover { background-color: #2a2a2a; border-color: #555; }
+.tab-button.active {
+    background-color: var(--primary-color); color: #000;
+    font-weight: 600; border-color: var(--primary-color);
+}
+.tab-content {
+    display: none; background-color: var(--card-color); padding: 30px;
+    border-radius: 12px; border: 1px solid #2a2a2a;
+}
+.tab-content.active { display: block; }
+.tab-content h3 { font-size: 1.8rem; color: var(--heading-color); margin-bottom: 10px; }
+.tab-content p { font-size: 1.1rem; margin-bottom: 30px; max-width: 80%; }
+.feature-list { display: flex; flex-direction: column; gap: 15px; }
+.feature-item-v2 { padding-left: 25px; position: relative; font-size: 1rem; }
+.feature-item-v2::before {
+    content: '✓'; color: var(--primary-color);
+    position: absolute; left: 0; font-weight: 600;
+}
+#premium-feature {
+    padding: 60px 0;
+    background: linear-gradient(0deg, rgba(0, 255, 255, 0.05) 0%, rgba(0, 255, 255, 0) 100%), var(--background-color);
+    border-top: 1px solid #2a2a2a; border-bottom: 1px solid #2a2a2a;
+}
+.premium-content { display: flex; align-items: center; gap: 40px; }
+.premium-icon { flex-shrink: 0; }
+.premium-icon img {
+    width: 100px; height: 100px;
+    filter: invert(70%) sepia(100%) saturate(1000%) hue-rotate(130deg);
+}
+.premium-text h2 { font-size: 2rem; color: var(--heading-color); margin-bottom: 10px; }
+.premium-text p { font-size: 1.1rem; margin-bottom: 15px; }
+.premium-text span { font-size: 0.9rem; color: #888; font-style: italic; }
+#common-features { padding: 80px 0; }
+#common-features .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+#common-features .feature-item { background-color: var(--card-color); padding: 25px; border-radius: 12px; }
+#common-features .feature-item h3 { color: var(--heading-color); }
+
+/* ================================== */
+/* ===== KARAR DETAY SAYFASI ===== */
+/* ================================== */
+.karar-ui-showcase {
+    flex: 1; background-color: #1A1A1A; border-radius: 20px;
+    padding: 40px 30px; display: flex; flex-direction: column;
+    align-items: center; gap: 20px; border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.karar-logo-placeholder {
+    width: 50px; height: 50px; background-color: #fff; border-radius: 50%;
+    mask: url('https://www.svgrepo.com/show/494931/brain-circuit.svg') no-repeat center / contain;
+    -webkit-mask: url('https://www.svgrepo.com/show/494931/brain-circuit.svg') no-repeat center / contain;
+}
+.karar-ui-showcase h2 { font-size: 2.5rem; color: var(--heading-color); font-weight: 700; }
+.karar-ui-showcase input {
+    width: 100%; padding: 15px; background-color: #2C2C2C;
+    border: 1px solid #444; border-radius: 8px; color: var(--text-color);
+    font-size: 1rem; text-align: center;
+}
+.karar-button {
+    width: 100%; padding: 15px; border-radius: 8px; font-size: 1rem;
+    font-weight: 600; border: none; cursor: pointer; transition: all 0.3s ease;
+}
+.karar-button.primary { background-color: #333; color: var(--text-color); border: 1px solid #555; }
+.karar-button.primary:hover { background-color: #444; border-color: #777; }
+.karar-button.social-gradient { background: linear-gradient(90deg, #F87516 0%, #5E11FF 100%); color: white; }
+.karar-button.social-gradient:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(248, 117, 22, 0.4); }
+.mode-tags { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; padding-top: 10px; border-top: 1px solid #333; width: 100%; }
+.mode-tags span { color: white; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; }
+.tag-gradient-1 { background: linear-gradient(90deg, #d34a9b, #e83b5d); }
+.tag-gradient-2 { background: linear-gradient(90deg, #4a77d3, #3be8a8); }
+.tag-gradient-3 { background: linear-gradient(90deg, #a44ad3, #e83b8e); }
+#how-it-works { background-color: var(--card-color); padding: 80px 0; }
+.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.step { text-align: center; }
+.step-number {
+    width: 60px; height: 60px; margin: 0 auto 20px auto; border: 2px solid var(--primary-color);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; font-weight: 600; color: var(--primary-color);
+}
+.step h3 { color: var(--heading-color); margin-bottom: 10px; }
+#gallery { padding: 80px 0; }
+.gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.gallery-item {
+    height: 300px; background-color: var(--card-color); border-radius: 12px;
+    display: flex; justify-content: center; align-items: center; color: #666;
+    font-size: 1.2rem; border: 1px solid #333;
+}
+
+
+/* ================================================================ */
+/* ===== ÜRÜN SAYFASI VİDEO ARKA PLAN STİLLERİ (DÜZELTİLMİŞ) ===== */
+/* ================================================================ */
+#product-hero {
+    position: relative;
+    overflow: hidden;
+}
+#product-hero .container {
+    position: relative;
+    z-index: 2;
+}
+.video-background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.video-background-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom, 
+        rgba(18, 18, 18, 0.3) 0%, 
+        rgba(18, 18, 18, 0.7) 50%, 
+        #121212 95%
+    );
+    z-index: 1;
+}
+
+/* ===== MOBİL UYUMLULUK ===== */
+@media (max-width: 992px) {
+    #product-hero .container { flex-direction: column; text-align: center; }
+    .steps-grid, .gallery-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    header .container { flex-direction: column; gap: 15px; }
+    .urun-grid { grid-template-columns: 1fr; }
+    .urun-karti.featured { grid-row: auto; }
+    #hero h1 { font-size: 2.8rem; }
+    .premium-content { flex-direction: column; text-align: center; }
+    .tab-content p { max-width: 100%; }
+}
