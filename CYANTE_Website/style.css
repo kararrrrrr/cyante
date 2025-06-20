@@ -416,11 +416,25 @@ footer {
 }
 
 @media (max-width: 768px) {
-    header .container { flex-direction: column; gap: 15px; }
+    header .container { 
+        flex-direction: column; 
+        gap: 15px; 
+    }
+    /* YENİ EKLENEN KOD BAŞLANGICI */
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Dikeyde boşluk ayarı */
+        padding-top: 10px; /* Üstten biraz boşluk */
+    }
+    /* YENİ EKLENEN KOD BİTİŞİ */
     .urun-grid { grid-template-columns: 1fr; }
     .urun-karti.featured { grid-row: auto; }
     #hero h1 { font-size: 2.8rem; }
-    #product-hero h1 { font-size: 2.5rem; }
+    .premium-content { flex-direction: column; text-align: center; }
+    .tab-content p { max-width: 100%; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .feature-grid { grid-template-columns: 1fr; }
 }
 /* ================================== */
 /* ===== KARAR DETAY SAYFASI ===== */
@@ -615,7 +629,18 @@ footer {
 }
 
 @media (max-width: 768px) {
-    header .container { flex-direction: column; gap: 15px; }
+    header .container { 
+        flex-direction: column; 
+        gap: 15px; 
+    }
+    /* YENİ EKLENEN KOD BAŞLANGICI */
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Dikeyde boşluk ayarı */
+        padding-top: 10px; /* Üstten biraz boşluk */
+    }
+    /* YENİ EKLENEN KOD BİTİŞİ */
     .urun-grid { grid-template-columns: 1fr; }
     .urun-karti.featured { grid-row: auto; }
     #hero h1 { font-size: 2.8rem; }
