@@ -406,3 +406,425 @@ footer {
     .tab-content p { max-width: 100%; }
     .steps-grid { gap: 50px; }
 }
+/* ===== GENEL VE DEĞİŞKENLER ===== */
+:root {
+    --primary-color: #00FFFF; /* Canlı Cyan */
+    --background-color: #121212; /* Koyu Arka Plan */
+    --card-color: #1E1E1E; /* Kart Rengi */
+    --text-color: #E0E0E0; /* Ana Metin Rengi */
+    --heading-color: #FFFFFF; /* Başlık Rengi */
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 50px;
+}
+
+/* ===== HEADER (ÜST BÖLÜM) ===== */
+header {
+    background: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    border-bottom: 1px solid #2a2a2a;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    text-decoration: none;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+header nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover,
+header nav a.active { /* Aktif link stili eklendi */
+    color: var(--primary-color);
+}
+
+
+/* ===== HERO (ANA KARŞILAMA) BÖLÜMÜ ===== */
+#hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 180px;
+    padding-bottom: 120px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--background-color) 80%, rgba(0, 255, 255, 0.05));
+}
+
+#hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    font-weight: 300;
+}
+
+.cta-button {
+    background: var(--primary-color);
+    color: #000;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+}
+
+/* ===== HAREKETLİ ARKA PLAN ANİMASYONU ===== */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* ===== ANA SAYFA ÜRÜNLER / HİZMETLER BÖLÜMÜ ===== */
+#urunler, #hizmetler-grid, #about-us-content, #team {
+    padding: 100px 0;
+}
+
+.urun-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.urun-karti {
+    background-color: var(--card-color);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #2a2a2a;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.urun-karti:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.urun-karti .ikon {
+    margin-bottom: 20px;
+    height: 50px;
+}
+
+.urun-karti .ikon img {
+    height: 100%;
+    filter: invert(1) opacity(0.8);
+}
+
+.urun-karti h3 {
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    margin-bottom: 15px;
+}
+
+.urun-karti p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    flex-grow: 1; 
+}
+
+.urun-button {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: auto; 
+}
+
+.urun-karti.featured {
+    grid-row: span 2;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+    position: relative;
+    padding-top: 50px;
+}
+
+.featured-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid #2a2a2a;
+    margin-top: 50px;
+}
+
+/* ======================================== */
+/* ===== ÜRÜN/HİZMET DETAY SAYFALARI (GENEL) ===== */
+/* ======================================== */
+
+#product-hero {
+    padding-top: 150px;
+    padding-bottom: 80px;
+    position: relative;
+    overflow: hidden;
+}
+#product-hero .container { 
+    display: flex; 
+    align-items: center; 
+    gap: 50px;
+    position: relative;
+    z-index: 2;
+}
+#product-hero .product-intro { flex: 1; }
+#product-hero h1 { font-size: 3rem; color: var(--heading-color); font-weight: 700; }
+#product-hero .subtitle { font-size: 1.25rem; margin-top: 20px; font-weight: 300; max-width: 800px; margin-left:auto; margin-right:auto; }
+
+.video-background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.video-background-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom, 
+        rgba(18, 18, 18, 0.3) 0%, 
+        rgba(18, 18, 18, 0.7) 50%, 
+        #121212 95%
+    );
+    z-index: 1;
+}
+
+#product-cta {
+    padding: 100px 0; 
+    text-align: center;
+    background: linear-gradient(rgba(0, 255, 255, 0.05), rgba(18, 18, 18, 1));
+}
+#product-cta h2 { font-size: 2.2rem; color: var(--heading-color); }
+#product-cta p { font-size: 1.1rem; max-width: 500px; margin: 15px auto 30px auto; }
+
+/* ================================== */
+/* ===== HAKKIMIZDA SAYFASI STİLLERİ ===== */
+/* ================================== */
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+.value-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+.value-item h3 {
+    color: var(--heading-color);
+    margin-bottom: 10px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 20px;
+}
+.team-member h3 {
+    color: var(--heading-color);
+}
+.team-member .role {
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+/* ================================== */
+/* ===== İLETİŞİM SAYFASI STİLLERİ ===== */
+/* ================================== */
+
+#contact-section {
+    padding: 100px 0;
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    background-color: var(--card-color);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #2a2a2a;
+}
+.contact-details h3, .contact-form h3 {
+    font-size: 1.8rem;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.contact-item i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+.contact-item a, .contact-item span {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+}
+.contact-item a:hover {
+    color: var(--primary-color);
+}
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: #2C2C2C;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: var(--font-family);
+}
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+#map-section {
+    padding-bottom: 100px;
+}
+.map-container {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+}
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    display: block;
+}
+
+/* ===== ANİMASYON İÇİN ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== MOBİL UYUMLULUK ===== */
+@media (max-width: 992px) {
+    #product-hero .container { flex-direction: column; text-align: center; }
+    .values-grid, .team-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    header .container { flex-direction: column; gap: 15px; }
+    .urun-grid { grid-template-columns: 1fr; }
+    .urun-karti.featured { grid-row: auto; }
+    #hero h1 { font-size: 2.8rem; }
+    #product-hero h1 { font-size: 2.5rem; }
+}
