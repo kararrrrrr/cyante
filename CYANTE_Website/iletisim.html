@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - CYANTE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <svg width="150" height="40" xmlns="http://www.w3.org/2000/svg"><style>.cyante-text { font-family: 'Poppins', sans-serif; font-size: 30px; font-weight: 300; fill: #E0E0E0; letter-spacing: 2px; } .cyante-dot { fill: #00FFFF; }</style><text x="0" y="30" class="cyante-text">CYANTE</text><circle cx="140" cy="30" r="4" class="cyante-dot"/></svg>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#urunler">Ürünler</a></li>
+                    <li><a href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="iletisim.html" class="active">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="product-hero">
+            <div class="container">
+                <div class="product-intro" style="text-align: center; width: 100%;">
+                    <h1>Bize Ulaşın</h1>
+                    <p class="subtitle">Fikirlerinizi, projelerinizi veya bir kahve içme teklifinizi duymaktan mutluluk duyarız. Aşağıdaki kanallardan bize ulaşabilirsiniz.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-details reveal">
+                        <h3>İletişim Bilgileri</h3>
+                        <p>Projenizle ilgili görüşmek veya bilgi almak için bize yazın, sizi en kısa sürede arayalım.</p>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Marmaris, Muğla, Türkiye</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@cyante.dev">info@cyante.dev</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+905551234567">+90 555 123 4567</a>
+                        </div>
+                    </div>
+                    <div class="contact-form reveal">
+                        <h3>Mesaj Gönderin</h3>
+                        <form action="#">
+                            <input type="text" name="name" placeholder="Adınız Soyadınız" required>
+                            <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+                            <input type="text" name="subject" placeholder="Konu" required>
+                            <textarea name="message" placeholder="Mesajınız" rows="6" required></textarea>
+                            <button type="submit" class="cta-button">Mesajı Gönder</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="map-section">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101138.3370364273!2d28.209121543359373!3d36.852174100000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bfb18ee3348179%3A0x8079f3246765799!2sMarmaris%2C%20Marmaris%2FMarmaris%2FMuğla!5e0!3m2!1str!2str!4v1718873295988!5m2!1str!2str" 
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CYANTE. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
