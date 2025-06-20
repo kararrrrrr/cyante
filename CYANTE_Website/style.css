@@ -395,3 +395,46 @@ footer {
     .premium-content { flex-direction: column; text-align: center; }
     .tab-content p { max-width: 100%; }
 }
+/* =============================================
+   Servis Takip Video Banner Stilleri
+   ============================================= */
+
+#servis-takip-banner {
+  position: relative; /* İçerideki elemanları konumlandırmak için gereklidir. */
+  height: 60vh; /* Banner yüksekliği (ekran yüksekliğinin %60'ı kadar). Değeri artırıp azaltabilirsiniz. */
+  min-height: 400px; /* Minimum yükseklik, küçük ekranlarda çok küçülmesini engeller. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden; /* Taşmaları gizler. */
+  color: #ffffff; /* Başlık rengini beyaz yapar. */
+}
+
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Videonun en-boy oranını koruyarak alanı kaplamasını sağlar. */
+  z-index: 1; /* Videoyu en arkaya gönderir. */
+}
+
+/* Videonun üzerine soft bir katman ekleyerek yazının okunurluğunu artırır */
+#servis-takip-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Siyah ve %40 saydamlık. Değeri 0.1 ile 0.9 arasında değiştirerek koyuluğu ayarlayabilirsiniz. */
+  z-index: 2; /* Katmanı videonun üzerine, yazının altına yerleştirir. */
+}
+
+/* Başlık ve diğer içeriklerin video ve katmanın üzerinde kalmasını sağlar */
+#servis-takip-banner .banner-content {
+  position: relative;
+  z-index: 3;
+}
